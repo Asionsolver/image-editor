@@ -143,10 +143,6 @@ export default function ImageEditor({
             },
           }}
         />
-
-        <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-black/50 text-white text-xs rounded-full backdrop-blur-sm pointer-events-none">
-          Profile Editor
-        </div>
       </div>
 
       {/* Controls Sidebar */}
