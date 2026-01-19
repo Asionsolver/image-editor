@@ -10,6 +10,7 @@ import {
   X,
   Image as ImageIcon,
 } from "lucide-react";
+import Header from "@/components/ui/Header";
 
 export default function Home() {
   const [imageSrc, setImageSrc] = useState<string | null>(null);
@@ -68,17 +69,11 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen  flex flex-col font-sans text-gray-900">
+    <main className="flex flex-col font-sans">
       {/* Header */}
 
-      <header className="bg-white shadow-lg">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <h1 className="text-2xl font-bold">Image Editor</h1>
-            <Button onClick={() => setModalOpen(true)}>Upload Image</Button>
-          </div>
-        </div>
-      </header>
+      <Header setModalOpen={setModalOpen} />
+
       {modalOpen && (
         <div className="flex-1 flex flex-col justify-center items-center">
           {!imageSrc && !resultSrc && (
@@ -152,7 +147,7 @@ export default function Home() {
         </div>
       )}
       {/* Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="w-full flex flex-col">
         {imageSrc && (
           <ImageEditor
             imageSrc={imageSrc}
